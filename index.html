@@ -242,8 +242,21 @@ document.body.appendChild(b);
 
 }
 
-</script>
+</script> function prev(){
+
+document.getElementById("slide"+slide).classList.remove("active");
+
+slide--;
+
+if(slide>=1){
+
+document.getElementById("slide"+slide).classList.add("active");
+
+}
+
+}
 
 </body>
 
 </html>
+
