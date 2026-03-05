@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Você ❤️</title>
+<style>
+body {
+    background: linear-gradient(135deg, #ff4d6d, #ff8fa3);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+    padding: 40px;
+}
+.container {
+    background: rgba(0,0,0,0.2);
+    padding: 30px;
+    border-radius: 15px;
+}
+h1 { font-size: 28px; }
+p { font-size: 20px; margin-top: 20px; }
+.footer { margin-top: 30px; font-size: 16px; opacity: 0.8; }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>❤️ Meu coração é seu</h1>
+    <p>🗝️ A chave também.</p>
+    <p>🦋 E meu amor por você é livre, leve e verdadeiro.</p>
+    <div class="footer">
+        Feliz Dia das Mulheres.<br>
+        — Julio
+    </div>
+</div>
+
+</body>
+</html>
