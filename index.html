@@ -1,200 +1,296 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
+
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Para Você ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300&display=swap" rel="stylesheet">
 
 <style>
 
 body{
 margin:0;
-padding:0;
 background:black;
 color:white;
-font-family:'Dancing Script', cursive;
-overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
 text-align:center;
+overflow:hidden;
+font-family:'Poppins',sans-serif;
 }
-
-/* estrelas */
-
-.stars{
-position:fixed;
-width:100%;
-height:100%;
-background:url('https://www.transparenttextures.com/patterns/stardust.png');
-animation:moveStars 120s linear infinite;
-}
-
-@keyframes moveStars{
-from{background-position:0 0;}
-to{background-position:10000px 5000px;}
-}
-
-/* corações */
-
-.heart{
-position:fixed;
-color:red;
-animation:fall 6s linear infinite;
-font-size:20px;
-}
-
-@keyframes fall{
-0%{transform:translateY(-10vh)}
-100%{transform:translateY(110vh)}
-}
-
-/* slides */
 
 .slide{
 display:none;
-height:100vh;
-align-items:center;
-justify-content:center;
-flex-direction:column;
-padding:30px;
+max-width:700px;
+padding:40px;
 }
 
 .active{
-display:flex;
+display:block;
 }
-
-/* texto */
 
 h1{
-font-size:3em;
-max-width:700px;
+font-family:'Great Vibes',cursive;
+font-size:60px;
+margin-bottom:10px;
 }
 
-/* botões */
+h2{
+font-size:30px;
+font-weight:300;
+}
+
+p{
+font-size:24px;
+}
+
+.buttons{
+margin-top:30px;
+}
 
 button{
-margin-top:25px;
-padding:14px 30px;
-font-size:1.3em;
+margin:10px;
+padding:14px 28px;
 border:none;
-border-radius:30px;
+border-radius:25px;
 background:#ff4d6d;
 color:white;
+font-size:18px;
 cursor:pointer;
 }
 
-button:hover{
-background:#ff1e4d;
+.star{
+position:absolute;
+background:white;
+width:2px;
+height:2px;
+animation:twinkle 2s infinite alternate;
 }
 
-.nav{
-position:fixed;
-bottom:30px;
-width:100%;
-display:flex;
-justify-content:center;
-gap:20px;
+@keyframes twinkle{
+from{opacity:0.2}
+to{opacity:1}
+}
+
+.heart{
+position:absolute;
+color:#ff4d6d;
+font-size:22px;
+animation:fall 6s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-100px)}
+100%{transform:translateY(100vh)}
+}
+
+.butterfly{
+position:absolute;
+font-size:28px;
+animation:fly 8s linear infinite;
+}
+
+@keyframes fly{
+0%{transform:translateX(-100px) translateY(50vh)}
+50%{transform:translateX(50vw) translateY(30vh)}
+100%{transform:translateX(100vw) translateY(60vh)}
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="stars"></div>
-
-<audio id="music" loop>
+<audio autoplay loop>
 <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
-<div id="slides">
+<!-- SLIDE 1 -->
 
-<div class="slide active">
-<h1>Fiz isso especialmente pra você<br>minha onça 🐆</h1>
-<button onclick="start()">Começar ❤️</button>
+<div id="slide1" class="slide active">
+
+<h2>Fiz isso especialmente para você</h2>
+<h1>minha onça 🐆</h1>
+
+<div class="buttons">
+<button onclick="next()">Quero ver ❤️</button>
 </div>
 
-<div class="slide">
+</div>
+
+<!-- SLIDE 2 -->
+
+<div id="slide2" class="slide">
+
 <h1>❤️ Meu coração é seu</h1>
-<button onclick="nextSlide()">Tocar seu coração</button>
-</div>
 
-<div class="slide">
-<h1>🗝️ Você tem a chave dele</h1>
-<button onclick="nextSlide()">Abrir meu coração</button>
-</div>
-
-<div class="slide">
-<h1>🦋 Meu amor por você é livre,<br>leve e bonito como uma borboleta</h1>
-<button onclick="nextSlide()">Continuar</button>
-</div>
-
-<div class="slide">
-<h1>Obrigado por existir ❤️<br><br>
-Feliz Dia das Mulheres 🌹<br><br>
-Seu futuro namorado</h1>
+<div class="buttons">
+<button onclick="prev()">⬅️ Voltar</button>
+<button onclick="heartEffect();next()">Toque nele ❤️</button>
 </div>
 
 </div>
 
-<div class="nav">
-<button onclick="prevSlide()">⬅ Voltar</button>
-<button onclick="nextSlide()">➡ Avançar</button>
+<!-- SLIDE 3 -->
+
+<div id="slide3" class="slide">
+
+<h1>🗝️ Você também tem a chave</h1>
+
+<div class="buttons">
+<button onclick="prev()">⬅️ Voltar</button>
+<button onclick="heartEffect();next()">Abrir meu coração 🗝️</button>
+</div>
+
+</div>
+
+<!-- SLIDE 4 -->
+
+<div id="slide4" class="slide">
+
+<h1>🦋 Meu amor por você é livre</h1>
+
+<p>leve e bnito como uma borboleta</p>
+
+<div class="buttons">
+<button onclick="prev()">⬅️ Voltar</button>
+<button onclick="butterflies();next()">Deixar voar 🦋</button>
+</div>
+
+</div>
+
+<!-- SLIDE FINAL -->
+
+<div id="slide5" class="slide">
+<h2>Obrigado por existir❤️</h2>
+<h1>Feliz Dia das Mulheres</h1>
+<p>— Seu futuro namorado ❤️</p>
+
+<div class="buttons">
+<button onclick="prev()">⬅️ Voltar</button>
+</div>
+
 </div>
 
 <script>
 
-let current=0
-let slides=document.querySelectorAll(".slide")
-let music=document.getElementById("music")
+let slide = 1;
 
-function showSlide(n){
-slides.forEach(s=>s.classList.remove("active"))
-slides[n].classList.add("active")
+function next(){
+
+document.getElementById("slide"+slide).classList.remove("active");
+
+slide++;
+
+if(slide<=5){
+document.getElementById("slide"+slide).classList.add("active");
 }
-
-function nextSlide(){
-if(current < slides.length-1){
-current++
-showSlide(current)
-}
-}
-
-function prevSlide(){
-if(current >0){
-current--
-showSlide(current)
-}
-}
-
-/* iniciar música */
-
-function start(){
-music.play()
-nextSlide()
-}
-
-/* corações */
-
-function createHeart(){
-
-let heart=document.createElement("div")
-heart.classList.add("heart")
-heart.innerHTML="❤️"
-
-heart.style.left=Math.random()*100+"vw"
-heart.style.fontSize=(Math.random()*20+10)+"px"
-
-document.body.appendChild(heart)
-
-setTimeout(()=>{
-heart.remove()
-},6000)
 
 }
 
-setInterval(createHeart,400)
+function prev(){
+
+document.getElementById("slide"+slide).classList.remove("active");
+
+slide--;
+
+if(slide>=1){
+document.getElementById("slide"+slide).classList.add("active");
+}
+
+}
+
+/* estrelas */
+
+for(let i=0;i<120;i++){
+
+let star=document.createElement("div");
+
+star.className="star";
+
+star.style.left=Math.random()*100+"vw";
+
+star.style.top=Math.random()*100+"vh";
+
+star.style.animationDuration=(1+Math.random()*2)+"s";
+
+document.body.appendChild(star);
+
+}
+
+/* corações caindo */
+
+for(let i=0;i<20;i++){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=(4+Math.random()*4)+"s";
+
+document.body.appendChild(heart);
+
+}
+
+/* efeito coração ao clicar */
+
+function heartEffect(){
+
+for(let i=0;i<10;i++){
+
+let heart=document.createElement("div");
+
+heart.innerHTML="❤️";
+
+heart.style.position="absolute";
+
+heart.style.left="50%";
+
+heart.style.top="50%";
+
+heart.style.fontSize="25px";
+
+heart.style.animation="fall 3s linear";
+
+document.body.appendChild(heart);
+
+}
+
+}
+
+/* borboletas */
+
+function butterflies(){
+
+for(let i=0;i<8;i++){
+
+let b=document.createElement("div");
+
+b.className="butterfly";
+
+b.innerHTML="🦋";
+
+b.style.top=Math.random()*100+"vh";
+
+document.body.appendChild(b);
+
+}
+
+}
 
 </script>
 
 </body>
+
 </html>
